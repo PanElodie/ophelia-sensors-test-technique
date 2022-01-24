@@ -1,0 +1,223 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    transition: all 0.5s ease;
+}
+
+:root {
+    --bleufonce:#19073F;
+    --bleu:#4A47FF;
+    --rouge: #FF4747;
+    --blanc:#F5F4FA;
+}
+
+body {
+    margin: 0;
+    padding: 45px;
+}
+
+.icon-mode {
+    width: 25px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+}
+
+h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+form div {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.search {
+    width: 100%;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+}
+
+.search::placeholder {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+}
+
+.cards-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.card img {
+    width: 70%;
+    max-width: 280px;
+    margin: 30px auto;
+    display: block;
+}
+
+.card p {
+    width: 70%;
+    margin: 10px auto;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.card-button {
+    width: 200px;
+    margin: 50px auto 30px;
+    padding: 10px 0;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+
+    display: block;
+}
+
+/* ------ LIGHT MODE ------- */
+
+.light h1 {
+    color: var(--rouge);
+}
+
+.light .search-icon {
+    fill: var(--bleu)
+}
+
+.light .search {
+    border-bottom: solid 1px var(--bleufonce);
+    color: var(--bleu);
+}
+
+.light .search::placeholder {
+    color: var(--bleu);
+}
+
+.light .card {
+    background-color: var(--blanc);
+    border: solid 1px var(--bleufonce);
+}
+
+.light h2 {
+    color: var(--bleufonce);
+}
+
+.light .card p {
+    color: var(--bleu);
+}
+
+.light .card-button {
+    background-color: var(--bleufonce);
+    color: var(--blanc);
+}
+
+/* ------ DARK MODE ------ */
+
+.dark {
+    background-color: var(--bleufonce);
+}
+
+.dark h1 {
+    color: var(--blanc);
+}
+
+.dark .search-icon {
+    fill: var(--blanc)
+}
+
+.dark .search {
+    background-color: var(--bleufonce);
+    border-bottom: solid 1px var(--blanc);
+    color: var(--blanc);
+}
+
+.dark .search::placeholder {
+    color: var(--blanc);
+}
+
+.dark .card {
+    background-color: #0F0030;
+    border: solid 1px var(--blanc);
+}
+
+.dark h2 {
+    color: var(--blanc);
+}
+
+.dark .card p {
+    color: var(--blanc);
+}
+
+.dark .card-button {
+    background-color: var(--blanc);
+    color: var(--bleufonce);
+}
+
+/* ------ MEDIA QUERIES ------ */
+
+@media screen and (max-width : 1080px) {
+    .cards-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width : 800px) {
+    body {
+        padding: 25px;
+    }
+
+    .cards-list {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        width: 85%;
+        font-size: 0.8rem;
+    }
+
+    .card-button {
+        margin: 25px auto 10px;
+    }  
+}

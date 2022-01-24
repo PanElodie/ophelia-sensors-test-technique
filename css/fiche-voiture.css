@@ -1,0 +1,225 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    transition: all 0.5s ease;
+}
+
+:root {
+    --bleufonce:#19073F;
+    --bleu:#4A47FF;
+    --rouge: #FF4747;
+    --blanc:#F5F4FA;
+}
+
+body {
+    margin: 0;
+    padding: 45px;
+}
+
+.icon-mode {
+    width: 25px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+}
+
+main {
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+}
+
+.back {   
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+.back svg {
+    max-width: 84px;
+    max-height: 84px;
+}
+
+h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+p {
+    font-family: 'Prompt', sans-serif;
+    margin: 5px 0;
+}
+
+.item-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.infos {
+    width: 60%;
+    margin: 50px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.infos div, .img {
+    display: flex;
+    align-items: center;
+}
+
+.img, .graph {
+    width: 40%;
+}
+
+.infos div {
+    width: 45%;
+    margin: 8px 15px;
+}
+
+.label {
+    margin-right: 20px;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.caracteristique, .description {
+    font-weight: 300;
+}
+
+.infos .description, .infos .boite-vit {
+    width: 100%;
+}
+
+.error {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.error a {
+    color: var(--rouge);
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.error a:hover {
+    color: var(--bleu);
+}
+
+
+/* ------ LIGHT MODE ------ */
+.light .back path {
+    stroke: var(--bleufonce);
+}
+
+.light h1 {
+    color: var(--rouge);
+}
+
+.light p {
+    color: var(--bleufonce);
+}
+
+.light .label {
+    color: var(--rouge);
+    border: solid 1px var(--rouge);
+    background: var(--blanc);
+}
+
+.light .label:hover {
+    background-color: var(--rouge);
+    color: var(--blanc);
+}
+
+/* ------ DARK MODE ------ */
+
+.dark {
+    background-color: var(--bleufonce);
+}
+
+.dark .back path {
+    stroke: var(--blanc);
+}
+
+.dark h1 {
+    color: var(--blanc);
+}
+
+.dark p {
+    color: var(--blanc);
+}
+
+.dark .label {
+    color: var(--blanc);
+    border: solid 1px var(--blanc);
+    background: var(--rouge);
+}
+
+.dark .label:hover {
+    background-color: var(--blanc);
+    color: var(--rouge);
+    border-color: var(--rouge);
+}
+
+/* ------ MEDIA QUERIES ------ */
+
+@media screen and (max-width: 1140px) {
+    .item-details {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .img {
+        margin: 30px auto;
+        justify-content: center;
+    }
+
+    .infos {
+        width: 85%;
+        margin: auto;
+    }
+
+    .graph {
+        width: 80%;
+        margin: 30px auto;
+    }
+}
+
+@media screen and (max-width : 820px) {
+    body {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .label {
+        font-size: 0.9rem;
+    }
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width : 772px) {
+    .back {
+        top: -30px;
+        left: -15px;
+    }
+
+    .infos div{
+       width: 100%;
+       margin: 10px auto;
+       justify-content: space-between;
+    }
+}
